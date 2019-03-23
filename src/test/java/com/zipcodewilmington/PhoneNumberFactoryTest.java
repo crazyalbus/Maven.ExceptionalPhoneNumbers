@@ -3,6 +3,7 @@ package com.zipcodewilmington;
 import com.zipcodewilmington.exceptions.InvalidPhoneNumberFormatException;
 import com.zipcodewilmington.phone.PhoneNumber;
 import com.zipcodewilmington.phone.PhoneNumberFactory;
+import com.zipcodewilmington.tools.RandomNumberFactory;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -87,5 +88,15 @@ public class PhoneNumberFactoryTest {
             // : Then
             Assert.assertTrue(phoneNumber != null);
         }
+    }
+
+    @Test
+    public void testCreateRandomNumberArray() {
+        // Given
+        // When
+        PhoneNumber[] testArray = PhoneNumberFactory.createRandomPhoneNumberArray(5);
+        System.out.println(testArray);
+        // : Then
+        Assert.assertEquals(5, testArray.length);
     }
 }
